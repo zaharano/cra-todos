@@ -1,0 +1,27 @@
+.NewTodoForm {
+  margin-bottom: 2em;
+  display: flex;
+}
+
+.NewTodoForm input {
+  font-size: 1.3rem;
+  padding: .4em;
+  border-radius: .3em;
+  border: 2px solid cornflowerblue;
+  margin-right: .5em;
+  display: block;
+  width: 100%;
+}
+
+.NewTodoForm input[type="number"] {
+  width: 4em;
+}
+
+.NewTodoForm button {
+  font-size: 1.3em;
+  border: 2px solid cornflowerblue;
+  border-radius: .3em;
+  padding: .4em;
+  align-self: flex-end;
+  justify-self: flex-end;
+}

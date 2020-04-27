@@ -1,0 +1,13 @@
+.TodoList {
+  padding: 2em;
+  margin-top: 8vh;
+  border-radius: 1em;
+  background-color: rgba(221, 233, 243, 0.95);
+  max-width: 60rem;
+  width: 80%;
+  min-width: 30em;
+}
+
+h1 {
+  margin-top: 0;
+}
