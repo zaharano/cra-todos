@@ -1,35 +1,34 @@
-import React, { Component } from 'react'
-import './NewTodoForm.css'
+import React, { Component } from 'react';
+import './NewTodoForm.css';
 
 export default class NewTodoForm extends Component {
   constructor(props) {
-    super(props)
-  
+    super(props);
+
     this.state = {
-       text: '',
-       priority: '', 
-    }
+      text: '',
+      priority: '',
+    };
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
-  }
+  };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addTodo(this.state)
+    this.props.addTodo(this.state);
     this.setState({
       text: '',
       priority: '',
-    })
-  }
-  
+    });
+  };
+
   render() {
     return (
-      <form className='NewTodoForm'
-      onSubmit={this.handleSubmit}>
+      <form className="NewTodoForm" onSubmit={this.handleSubmit}>
         <input
           type="text"
           name="text"
@@ -38,7 +37,7 @@ export default class NewTodoForm extends Component {
           value={this.state.text}
           onChange={this.handleChange}
         />
-        <input 
+        <input
           type="number"
           name="priority"
           title="Todo priority"
@@ -48,6 +47,6 @@ export default class NewTodoForm extends Component {
         />
         <button>Add</button>
       </form>
-    )
+    );
   }
 }

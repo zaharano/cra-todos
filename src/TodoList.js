@@ -4,7 +4,6 @@ import Todo from './Todo';
 import { v4 as uuid } from 'uuid';
 import './TodoList.css';
 
-
 export default class TodoList extends Component {
   constructor(props) {
     super(props);
@@ -25,14 +24,18 @@ export default class TodoList extends Component {
   };
 
   editTodo = (editedTodo) => {
-    const todos = this.state.todos.map(todo => {
+    const todos = this.state.todos.map((todo) => {
       if (todo.id === editedTodo.id) {
-        return { ...todo, text: editedTodo.text, priority: editedTodo.priority }
+        return {
+          ...todo,
+          text: editedTodo.text,
+          priority: editedTodo.priority,
+        };
       }
       return todo;
     });
-    this.setState({ todos })
-  }
+    this.setState({ todos });
+  };
 
   removeTodo = (id) => {
     this.setState((st) => ({
@@ -67,9 +70,7 @@ export default class TodoList extends Component {
       <div className="TodoList">
         <h1>Todos</h1>
         <NewTodoForm addTodo={this.addTodo} />
-        <div className="TodoList-table">
-          {list}
-        </div>
+        <div className="TodoList-table">{list}</div>
       </div>
     );
   }
